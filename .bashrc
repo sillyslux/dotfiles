@@ -111,3 +111,9 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# load configuration from ~/.config/.bash/* files
+for x in $(find ~/.config/bash/*); do
+	. $x
+done
+

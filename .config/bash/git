@@ -1,0 +1,5 @@
+#!/bin/bash
+
+alias dotfiles='git --git-dir=$HOME/.dotfiles.git'
+alias homekeeper='git --git-dir=$HOME/.home.git'
+alias hostgit='git --git-dir=/host.git'

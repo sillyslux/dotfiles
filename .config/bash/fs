@@ -1,0 +1,10 @@
+#!/bin/bash
+
+alias ll='ls -l'
+alias la='ls -A'
+alias lla='ls -lA'
+
+alias df='df -h'
+alias du='du -h'
+
+function mkc() { mkdir $1; cd $1 || return; }
