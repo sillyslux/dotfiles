@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# /etc/network/if-up.d/custom-dyndns
+#
+# Update dynamic dns provider changeip.com.
+#
+# Create a link with:
+#   `sudo ln ~/.bin/changeipcom /etc/network/if-up.d/custom-dyndns`.
+# Save your sensitive data in /root/secrets:
+#    export CHANGEIP_USER=username
+#    export CHANGEIP_PWD=password
+#    export CHANGEIP_HOST=hostname
+#
+# Copyright (C) 2018 Sill S. Lux - All Rights Reserved
+# Permission to copy and modify is granted under the MIT license
+# Last revised 3/14/2018
+
+if [ $IFACE = ppp0 ] && [ $MODE = start ] && [ $PHASE = post-up ]; then
+	. /root/secrets
+	PPPIP=${IP4_ADDRESS_0%/*}
+	MSG=$(wget -qO - https://nic.changeip.com/nic/update?u=$CHANGEIP_USER\&p=$CHANGEIP_PWD\&hostname=$CHANGEIP_HOST\&ip=$PPPIP)
+	logger -p local0.info "changeip.org: $MSG ($PPPIP)"
+fi
