@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Retrieve GSM prepaid balance and data plan infos from croatian
+# mobile provider Tele2.
+
+STR=$(
+	wget -qO - http://mbb.tele2.hr/fetch/tpo |
+	grep -o '\w\+.\w\+ KN\|[1-9][0-9]\?\+ MB' |
+	paste -sd "/" |
+	sed 's/\// \/ /g'
+)
+
+if [ "$STR" ]; then
+	echo $STR > ~/.tele2.data
+fi
