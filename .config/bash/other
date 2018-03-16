@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# make alias parse the command after sudo
 alias sudo='sudo '
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# use like `cp big.file ~/folder; notify-me`
+alias notify-me='notify-send --urgency=normal -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # enable ^s to search forward in history (^r) (^g cancels the search)
 stty -ixon
