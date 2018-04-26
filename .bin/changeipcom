@@ -5,13 +5,14 @@
 # Update dynamic dns provider changeip.com.
 #
 # Create a link with:
-#   `sudo ln ~/.bin/changeipcom /etc/network/if-up.d/custom-dyndns`.
+#   `sudo ln ~/.bin/changeipcom /etc/network/if-up.d/custom-dyndns`
+#
 # Save your sensitive data in /root/secrets:
+#    export CHANGEIP_HOST=hostname
 #    export CHANGEIP_USER=username
 #    export CHANGEIP_PWD=password
-#    export CHANGEIP_HOST=hostname
 #
-# Copyright (C) 2018 Sill S. Lux - All Rights Reserved
+# Copyright (C) 2018 Silly S. Lux - All Rights Reserved
 # Permission to copy and modify is granted under the MIT license
 # Last revised 3/14/2018
 
