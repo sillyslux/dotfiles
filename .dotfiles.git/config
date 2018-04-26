@@ -13,7 +13,7 @@
 	c = commit -m
 	p = push
 	pg = push github
-	h = config --get-regexp '^alias\\.'
+	h = "! echo 'dotfiles - aliases:';git --git-dir /home/silly/.dotfiles.git config --get-regexp '^alias\\.'|sed 's/^alias\\.\\([a-z]*\\) \\(.*\\)/  \\1\\t\\2/'|grep -v '^  h'"
 [credential]
 	helper = cache --timeout=3600
 [user]
