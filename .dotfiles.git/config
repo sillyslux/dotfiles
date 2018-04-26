@@ -1,0 +1,29 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	worktree = /home/silly
+[alias]
+	a = add -f
+	u = add
+	ua = add ~
+	l = ls-files
+	s = status
+	c = commit -m
+	p = push
+	pg = push github
+	h = config --get-regexp '^alias\\.'
+[credential]
+	helper = cache --timeout=3600
+[user]
+	name = Silly S. Lux
+[remote "github"]
+	url = https://github.com/sillyslux/dotfiles.git
+	fetch = +refs/heads/*:refs/remotes/github/*
+[remote "origin"]
+	url = www/git/intranet/repos/dotfiles/
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
