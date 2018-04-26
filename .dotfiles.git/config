@@ -7,7 +7,7 @@
 [alias]
 	a = add -f
 	u = add
-	ua = add ~
+	ua = add /home/silly
 	l = ls-files
 	s = status
 	c = commit -m
