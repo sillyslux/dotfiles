@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export HISTFILESIZE=-1
+export HISTSIZE=-1
+export HISTCONTROL=ignoreboth
+export HISTTIMEFORMAT="%F %T "
+export HISTFILE=~/.bash_eternal_history
+PROMPT_COMMAND="history -a"
+
+shopt -s histappend
+shopt -s checkwinsize
+
+# enable ^s to search forward in history (^r) (^g cancels the search)
+stty -ixon
