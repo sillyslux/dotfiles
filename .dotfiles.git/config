@@ -22,7 +22,7 @@
 	url = https://github.com/sillyslux/dotfiles.git
 	fetch = +refs/heads/*:refs/remotes/github/*
 [remote "origin"]
-	url = www/git/intranet/repos/dotfiles/
+	url = www/git/intranet/repos/desk/silly-dotfiles/
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
 	remote = origin
