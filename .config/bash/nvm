@@ -1,5 +1,16 @@
 #!/bin/bash
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# that approach has caveats, including that node and npm and globally installed modules in the default version all aren’t available right away... but it saves me some time when opening a new shell `time bash -c "./nvm"   real    0m0.825s`
+loadnvm() {
+  unset -f npm npx node
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  $@
+}
+
+nvm() { loadnvm nvm $@; }
+npm() { loadnvm npm $@; }
+npx() { loadnvm npx $@; }
+node() { loadnvm node $@; }
