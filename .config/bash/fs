@@ -12,7 +12,9 @@ alias grepn='grep -n'
 alias df='df -h'
 alias du='du -h'
 
-function mkc() { mkdir $1; cd $1 || return; }
+alias rm='rm -r --interactive=never'
+
+function mkc() { mkdir -p $1; cd $1 || return; }
 
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"

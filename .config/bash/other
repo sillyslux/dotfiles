@@ -1,5 +1,7 @@
 #!/bin/bash
 
+alias epoch='date +%s'
+
 # make alias parse the command after sudo and xargs
 alias sudo='sudo '
 alias xargs='xargs '
