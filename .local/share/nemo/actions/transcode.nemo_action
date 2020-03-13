@@ -1,0 +1,9 @@
+[Nemo Action]
+Active=true
+Name=Transcode
+Comment=transcode ts file %N
+Exec=ffmpeg -vcodec copy -acodec copy -sn "%F.mp4" -i "%F"
+Icon-Name=gnome-mime-application-x-compress
+Selection=Any
+Extensions=ts;
+Terminal=true

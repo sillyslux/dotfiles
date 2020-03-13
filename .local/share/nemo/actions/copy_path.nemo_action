@@ -1,0 +1,8 @@
+[Nemo Action]
+Active=true
+Name=Copy Path
+Comment=Copy path to clipboard
+Exec=bash -c "echo %F|xsel -p -i"
+Icon-Name=gnome-mime-application-x-compress
+Selection=any
+Extensions=any;
