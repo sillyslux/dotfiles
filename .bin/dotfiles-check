@@ -1,7 +1,0 @@
-#!/bin/bash
-
-OUT=$(git --git-dir=$HOME/.dotfiles.git status --porcelain)
-
-if [ "$OUT" ]; then
-  DISPLAY=:0 notify-send -t 0 -i $HOME/.icons/acyls-pink/48x48/real_icons/apps/git.svg DotFiles "\n$OUT"
-fi
