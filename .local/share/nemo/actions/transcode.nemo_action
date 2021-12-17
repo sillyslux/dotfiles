@@ -1,8 +1,11 @@
 [Nemo Action]
 Active=true
 Name=Transcode
-Comment=transcode ts file %N
-Exec=ffmpeg -vcodec copy -acodec copy -sn "%F.mp4" -i "%F"
+Comment=transcode from: "%N" to: "%F.mp4"
+#Exec=ffmpeg -vcodec copy -acodec copy -sn "%F.mp4" -i "%F"
+Exec=bash -c 'fn="%F"; bn=${fn:0:-3}; ffmpeg -vcodec copy -acodec copy -sn "$bn.mp4" -i "%F"; echo -e "\n\n  File written:\n    %F\n\n  Done...\n";sleep 20;'
+#Exec=echo %F > /home/silly/test
+#Quote=double
 Icon-Name=gnome-mime-application-x-compress
 Selection=Any
 Extensions=ts;

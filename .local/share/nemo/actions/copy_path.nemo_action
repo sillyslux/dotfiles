@@ -2,7 +2,7 @@
 Active=true
 Name=Copy Path
 Comment=Copy path to clipboard
-Exec=bash -c "echo %F|xsel -p -i"
+Exec=bash -c "echo -ne "%F"|xsel -p -i"
 Icon-Name=gnome-mime-application-x-compress
 Selection=any
 Extensions=any;

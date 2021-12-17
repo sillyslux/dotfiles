@@ -5,3 +5,10 @@ alias hostgit='git --git-dir=/host.git'
 alias dotfiles='git --git-dir=$HOME/.dotfiles.git'
 alias homekeeper='git --git-dir=$HOME/.home.git'
 alias www='git --git-dir=$HOME/www/.lncr.git'
+
+function gc {
+#	echo "git clone https://github.com/$1"
+	git clone https://github.com/$1
+	cd $(echo $1|cut -d / -f 2)
+}
+

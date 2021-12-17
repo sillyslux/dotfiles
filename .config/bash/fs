@@ -6,8 +6,9 @@ alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -lA'
 
-alias grep='grep --color=auto'
+alias grep='grep --color=always'
 alias grepn='grep -n'
+alias less='less -R'
 
 alias df='df -h'
 alias du='du -h'
