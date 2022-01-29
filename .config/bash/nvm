@@ -10,6 +10,7 @@ loadnvm() {
   $@
 }
 
+# i think this was speeding up initialization of new terminals
 nvm() { loadnvm nvm $@; }
 npm() { loadnvm npm $@; }
 npx() { loadnvm npx $@; }
