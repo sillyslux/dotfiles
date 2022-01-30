@@ -1,0 +1,59 @@
+# Debian apt-cache(8) completion                           -*- shell-script -*-
+
+# List APT binary packages
+_apt_cache_packages()
+{
+    apt-cache --no-generate pkgnames "$cur" 2>/dev/null || :
+}
+
+# List APT source packages
+_apt_cache_sources()
+{
+    compgen -W "$(apt-cache dumpavail |
+        awk '$1 == "Source:" { print $2 }' | sort -u)" -- "$1"
+}
+
+# List APT source packages
+_apt_cache_src_packages()
+{
+    compgen -W '$(_apt_cache_sources "$cur")' -- "$cur"
+}
+
+_apts()
+{
+    local cur prev words cword
+    _init_completion || return
+
+                COMPREPLY=($(_apt_cache_packages))
+
+    if [[ $cur == -* ]]; then
+
+        COMPREPLY=($(compgen -W '-h -v -p -s -q -i -f -a -g -c -o --help
+                --version --pkg-cache --src-cache --quiet --important --full
+                --all-versions --no-all-versions --generate --no-generate
+                --names-only --all-names --recurse --config-file --option
+                --installed' -- "$cur"))
+    fi
+
+} &&
+    complete -F _apts apts
+
+_aptss()
+{
+    local cur prev words cword
+    _init_completion || return
+
+                COMPREPLY=($(_apt_cache_packages))
+
+    if [[ $cur == -* ]]; then
+
+        COMPREPLY=($(compgen -W '-h -v -p -s -q -i -f -a -g -c -o --help
+                --version --pkg-cache --src-cache --quiet --important --full
+                --all-versions --no-all-versions --generate --no-generate
+                --names-only --all-names --recurse --config-file --option
+                --installed' -- "$cur"))
+    fi
+
+} &&
+    complete -F _aptss aptss
+

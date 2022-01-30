@@ -1,0 +1,47 @@
+# Debian apt-get(8) completion                             -*- shell-script -*-
+
+_apti()
+{
+    local cur prev words cword package
+    _init_completion -n ':=' || return
+
+                if [[ $cur == */* ]]; then
+                    _filedir deb
+                    return
+                elif [[ $cur == *=* ]]; then
+                    package="${cur%%=*}"
+                    cur="${cur#*=}"
+                    COMPREPLY=($(IFS=$'\n' compgen -W "$(
+                        apt-cache --no-generate madison "$package" 2>/dev/null |
+                            while IFS=' |' read -r _ version _; do
+                                echo "$version"
+                            done
+                    )" \
+                        -- "$cur"))
+                    __ltrim_colon_completions "$cur"
+                    return
+                fi
+
+                COMPREPLY+=($(_xfunc apt-cache _apt_cache_packages))
+
+    if [[ $cur == -* ]]; then
+        COMPREPLY=($(compgen -W '--no-install-recommends --install-suggests
+            --download-only --fix-broken --ignore-missing --fix-missing
+            --no-download --quiet --simulate --just-print --dry-run --recon
+            --no-act --yes --assume-yes --assume-no --no-show-upgraded
+            --verbose-versions --host-architecture --build-profiles --compile
+            --build --ignore-hold --with-new-pkgs --no-upgrade --only-upgrade
+            --allow-downgrades --allow-remove-essential
+            --allow-change-held-packages --force-yes --print-uris --purge
+            --reinstall --list-cleanup --target-release --default-release
+            --trivial-only --no-remove --auto-remove --autoremove --only-source
+            --diff-only --dsc-only --tar-only --arch-only --indep-only
+            --allow-unauthenticated --no-allow-insecure-repositories
+            --allow-releaseinfo-change --show-progress --with-source --help
+            --version --config-file --option' -- "$cur"))
+    fi
+
+} &&
+    complete -F _apti apti
+
+# ex: filetype=sh
