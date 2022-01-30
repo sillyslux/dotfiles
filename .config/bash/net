@@ -1,6 +1,7 @@
 #!/bin/bash
 
 alias sshs='ssh server'
+alias linode="ssh tgz.epac.to"
 
 
 # simple webserver

@@ -9,3 +9,5 @@ alias xargs='xargs '
 # use like `make; andTell` or `cp big.file ~/folder; notify-me`
 alias andTell='notify-send --urgency=normal -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*andTell$//'\'')"'
 
+# copy file contents to primary clipboard (middle click paste)
+xcat() { cat "$1" | xsel -p -i; }

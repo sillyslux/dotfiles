@@ -12,3 +12,9 @@ function gc {
 	cd $(echo $1|cut -d / -f 2)
 }
 
+function gc1 {
+#	echo "git clone https://github.com/$1"
+	git clone --depth 1 https://github.com/$1
+	cd $(echo $1|cut -d / -f 2)
+}
+

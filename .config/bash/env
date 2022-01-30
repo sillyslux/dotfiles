@@ -3,6 +3,9 @@
 PATH=$HOME/.bin:$PATH
 PATH=$HOME/www/dev/luamake:$PATH
 
+# make `mv path/* to/target` copy .files as well
+shopt -s dotglob
+
 git_branch () {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
 }
