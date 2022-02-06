@@ -1,0 +1,15 @@
+[user]
+	name = Silly S. Lux
+	email = sillyslux@gmail.com
+[credential]
+	helper = cache --timeout=3600
+[alias]
+        s = status
+        c = commit -m
+        p = push
+        d = diff
+
+[init]
+	defaultBranch = master
+[advice]
+	addIgnoredFile = false
