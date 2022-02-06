@@ -1,0 +1,59 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "window.menuBarVisibility": "toggle",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDragAndDrop": false,
+    "tslint.enable": false,
+    "tslint.exclude": "**",
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+    },
+    "[sass]": {
+        "editor.defaultFormatter": "syler.sass-indented"
+    },
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorCustomizations": {
+        "[Atom One Dark]": {
+            "sideBar.background": "#1f2529",
+            "sideBar.foreground": "#a5a5a5",
+            "activityBar.background": "#1f2529",
+            "editorGroup.emptyBackground": "#1f2529",
+            "editor.background": "#151a1c"
+        }
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.tabSize": 2
+    },
+    "xmlTools.enforcePrettySelfClosingTagOnFormat": true,
+    "[javascriptreact]": {
+        "editor.tabSize": 2
+    },
+    "explorer.confirmDelete": false,
+    "files.autoSave": "off",
+    "workbench.sideBar.location": "left",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "lua.debug.settings.console": "integratedTerminal",
+    "editor.semanticHighlighting.enabled": true,
+    "files.hotExit": "onExitAndWindowClose",
+    "eslint.format.enable": true,
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "workbench.editor.splitInGroupLayout": "vertical",
+    "vscode_custom_css.imports": [
+        "file:///home/silly/.vscode/user.css"
+    ],
+    "workbench.iconTheme": "material-icon-theme",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.sash.size": 20,
+    "workbench.sash.hoverDelay": 0,
+    "phpfmt.psr1": true,
+    "intelephense.environment.shortOpenTag": false,
+    "debug.toolBarLocation": "docked"
+}
