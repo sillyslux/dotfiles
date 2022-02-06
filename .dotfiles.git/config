@@ -18,7 +18,7 @@
 	name = Silly S. Lux
 	email = sillyslux@gmail.com
 [remote "github"]
-	url = https://github.com/sillyslux/dotfiles.git
+	url = ssh://git@github.com/sillyslux/dotfiles
 	fetch = +refs/heads/*:refs/remotes/github/*
 [remote "origin"]
 	url = www/git/intranet/repos/desk/silly-dotfiles/
